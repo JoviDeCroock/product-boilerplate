@@ -6,27 +6,14 @@ import { setPragma } from 'https://unpkg.com/goober@latest?module';
 setPragma(h);
 window.html = htm.bind(h);
 
-if (document.body.firstChild) {
-  hydrate(
-    html`
-      <div>
-        <${Router}>
-          <${Auth} />
-        </${Router}>
-      </div>
-    `,
-    document.body,
-  );
-} else {
-  render(
-    html`
-      <div>
-        <${Router}>
-          <${Auth} />
-        </${Router}>
-      </div>
-    `,
-    document.body,
-  );
-}
+render(
+  html`
+    <div>
+      <${Router}>
+        <${Auth} />
+      </${Router}>
+    </div>
+  `,
+  document.body,
+);
 

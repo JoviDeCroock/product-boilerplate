@@ -3,6 +3,7 @@ import { terser } from 'rollup-plugin-terser';
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import gzipPlugin from 'rollup-plugin-gzip';
+import html from '@rollup/plugin-html';
 
 export default {
   input: 'src/index.js',
@@ -23,5 +24,6 @@ export default {
     }),
     terser(),
     gzipPlugin(),
+    html(),
   ]
 }
