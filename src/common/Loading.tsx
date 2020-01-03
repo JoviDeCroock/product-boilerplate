@@ -1,3 +1,5 @@
 import { h } from 'preact';
 
-export default () => <p>Loading...</p>
+const Loading = () => <p>Loading...</p>
+
+export default Loading;
