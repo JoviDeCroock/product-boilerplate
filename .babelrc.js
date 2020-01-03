@@ -21,12 +21,24 @@ module.exports = {
       ],
       plugins: [
         ...plugins,
-        ["@babel/plugin-transform-runtime", { corejs: 3 }]
+        ["@babel/plugin-transform-runtime", { corejs: 3 }],
+        ["@babel/plugin-transform-react-jsx", {
+          "pragma": "h",
+          "pragmaFrag": "Fragment",
+        }]
       ],
     },
     modern: {
       presets: ['@babel/preset-modules'],
-      plugins,
+      plugins: [
+        ...plugins,
+        ["babel-plugin-transform-jsx-to-htm", {
+          "import": {
+            "module": "htm/preact",
+            "export": "html"
+          }
+        }]
+      ],
     }
   }
 };

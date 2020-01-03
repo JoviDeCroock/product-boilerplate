@@ -41,12 +41,12 @@ const makeConfig = (mode) => {
     mode: isProduction ? 'production' : 'development',
     entry: mode === 'legacy' ? {
       fetch: 'whatwg-fetch',
-      main: './src/index.ts',
+      main: './src/index.tsx',
     } : {
-      main: './src/index.ts'
+      main: './src/index.tsx'
     },
     context: path.resolve(__dirname, './'),
-    stats: 'none',
+    stats: 'normal',
     devtool: isProduction ? '' : 'eval-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
@@ -137,4 +137,4 @@ const makeConfig = (mode) => {
 
 module.exports = process.env.NODE_ENV === 'production' ?
   [makeConfig('modern'), makeConfig('legacy')] :
-  makeConfig('legacy');
+  makeConfig('modern');
