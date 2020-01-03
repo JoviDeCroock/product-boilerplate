@@ -46,7 +46,7 @@ const makeConfig = (mode) => {
       main: './src/index.ts'
     },
     context: path.resolve(__dirname, './'),
-    stats: 'normal',
+    stats: 'none',
     devtool: isProduction ? '' : 'eval-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
@@ -87,7 +87,6 @@ const makeConfig = (mode) => {
         ...(mode === 'modern' ? { 'url': 'native-url' } : {})
       },
     },
-    stats: "normal",
     module: {
       rules: [
         {

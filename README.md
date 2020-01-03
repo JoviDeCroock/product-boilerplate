@@ -1,1 +1,1 @@
-# preact-boilerplate
+# product-template
