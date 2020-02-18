@@ -2,10 +2,15 @@ const plugins = [
   "@babel/plugin-syntax-dynamic-import"
 ];
 
+const presets = [
+  "@babel/preset-typescript"
+];
+
 module.exports = {
   env: {
     legacy: {
       presets: [
+        ...presets,
         [
           "@babel/preset-env", {
             exclude: ["@babel/plugin-transform-typeof-symbol"],
@@ -29,7 +34,10 @@ module.exports = {
       ],
     },
     modern: {
-      presets: ['@babel/preset-modules'],
+      presets: [
+        ...presets,
+        '@babel/preset-modules'
+      ],
       plugins: [
         ...plugins,
         ["babel-plugin-transform-jsx-to-htm", {
