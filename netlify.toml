@@ -1,3 +1,4 @@
 [build]
+  comamnd = "yarn build"
   publish = "dist"
   functions = "server/src"

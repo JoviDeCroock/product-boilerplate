@@ -1,18 +1,7 @@
-const { ApolloServer, gql } = require('apollo-server-lambda')
+const { ApolloServer } = require('apollo-server-lambda');
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
-
-const resolvers = {
-  Query: {
-    hello: (root, args, context) => {
-      return `Hello from Netlify function.`
-    }
-  }
-}
+const typeDefs = require('./schema');
+const resolvers = require('./resolvers');
 
 const server = new ApolloServer({
   typeDefs,
