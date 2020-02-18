@@ -1,0 +1,4 @@
+[build]
+  command = "yarn prepare"
+  publish = "dist/client"
+  functions = "server/src"

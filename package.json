@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "rimraf dist/ && cross-env NODE_ENV=production webpack",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "prepare": "cd server && yarn && cd ../ && yarn && yarn build"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,6 @@
     "@babel/runtime-corejs3": "7.7.2",
     "core-js": "^3.6.1",
     "goober": "^1.6.1",
-    "hooked-form": "^4.1.0",
     "htm": "^2.2.1",
     "native-url": "^0.2.4",
     "preact": "^10.1.1",
