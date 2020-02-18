@@ -6,7 +6,8 @@ import { App } from './App';
 setPragma(h);
 normalize();
 
-console.log(process.env);
+console.log(process.env.API_URL);
+console.log(process.env.DEPLOY_URL);
 
 const root = document.getElementById('root');
 if (root) {
