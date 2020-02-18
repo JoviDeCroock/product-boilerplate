@@ -6,6 +6,8 @@ import { App } from './App';
 setPragma(h);
 normalize();
 
+console.log(process.env);
+
 const root = document.getElementById('root');
 if (root) {
   render(<App />, root);

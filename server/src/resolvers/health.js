@@ -1,6 +1,6 @@
 const healthResolvers = {
   Query: {
-    ping: () => ({ pong: 'Dong' }),
+    ping: () => ({ pong: 'Healthy' }),
   },
 };
 
