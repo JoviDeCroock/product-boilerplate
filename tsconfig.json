@@ -16,6 +16,7 @@
     "jsxFactory": "h",
     "importHelpers": true,
     "rootDir": "src",
+    "noImplicitAny": false,
     "strict": true
   },
   "include": [
