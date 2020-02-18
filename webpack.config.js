@@ -13,8 +13,18 @@ const modernTerser = new TerserPlugin({
   parallel: true,
   sourceMap: true,
   terserOptions: {
+    compress: {
+      keep_infinity: true,
+      pure_getters: true,
+      passes: 10,
+    },
+    output: {
+      // By default, Terser wraps function arguments in extra parens to trigger eager parsing.
+      wrap_func_args: false,
+    },
     ecma: 8,
-    safari10: true
+    safari10: true,
+    toplevel: true,
   }
 });
 
@@ -73,16 +83,6 @@ const makeConfig = (mode) => {
     },
     optimization: {
       minimizer: mode === 'legacy' ? undefined : [modernTerser],
-      splitChunks: {
-        automaticNameDelimiter: '-',
-        cacheGroups: {
-          common: {
-            chunks: 'all',
-            name: 'common',
-            test: /[\\/]src[\\/](common|global|layout)[\\/]/
-          },
-        },
-      },
     },
     plugins,
     resolve: {

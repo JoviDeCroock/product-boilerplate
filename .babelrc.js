@@ -3,14 +3,16 @@ const plugins = [
 ];
 
 const presets = [
-  "@babel/preset-typescript"
+  
 ];
 
 module.exports = {
   env: {
     legacy: {
       presets: [
-        ...presets,
+        ["@babel/preset-typescript", {
+          jsxPragma: 'h',
+        }],
         [
           "@babel/preset-env", {
             exclude: ["@babel/plugin-transform-typeof-symbol"],
@@ -35,8 +37,8 @@ module.exports = {
     },
     modern: {
       presets: [
-        ...presets,
-        '@babel/preset-modules'
+        "@babel/preset-typescript",
+        ['@babel/preset-modules', { loose: true }]
       ],
       plugins: [
         ...plugins,

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "build/dist",
-    "target": "es5",
+    "target": "es2015",
     "module": "esnext",
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
@@ -20,7 +20,6 @@
     "strict": true
   },
   "include": [
-    "./src/**/*",
-    "./webpack.typings.d.ts"
+    "./src/**/*"
   ],
 }
