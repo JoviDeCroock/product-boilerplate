@@ -8,4 +8,5 @@ const server = new ApolloServer({
   resolvers
 })
 
+console.log('SERVER', process.env);
 exports.handler = server.createHandler()
