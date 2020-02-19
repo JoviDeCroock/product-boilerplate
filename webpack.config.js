@@ -28,7 +28,9 @@ const modernTerser = new TerserPlugin({
   }
 });
 
-const apiUrl = process.env.DEPOLOY_URL ? JSON.stringify(process.env.DEPOLOY_URL) + '/graphql' : JSON.stringify(process.env.API_URL)
+const apiUrl = process.env.DEPLOY_PRIME_URL ?
+  JSON.stringify(process.env.DEPLOY_PRIME_URL) + '/.netlify/functions/graphql' :
+  JSON.stringify(process.env.API_URL)
 
 const makeConfig = (mode) => {
   console.log('SECRET', process.env)
@@ -40,8 +42,7 @@ const makeConfig = (mode) => {
     new HtmlWebpackPlugin({ inject: true, template: './index.html' }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.API_URL': JSON.stringify(process.env.API_URL),
-      'process.env.DEPOLOY_URL': JSON.stringify(process.env.DEPOLOY_URL)
+      'process.env.API_URL': apiUrl,
     }),
   ];
 
