@@ -28,7 +28,10 @@ const modernTerser = new TerserPlugin({
   }
 });
 
+const apiUrl = process.env.DEPOLOY_URL ? JSON.stringify(process.env.DEPOLOY_URL) + '/graphql' : JSON.stringify(process.env.API_URL)
+
 const makeConfig = (mode) => {
+  console.log('SECRET', process.env)
   const { NODE_ENV } = process.env;
   const isProduction = NODE_ENV === 'production';
 
