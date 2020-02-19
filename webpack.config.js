@@ -28,21 +28,18 @@ const modernTerser = new TerserPlugin({
   }
 });
 
-const apiUrl = process.env.DEPLOY_PRIME_URL ?
-  JSON.stringify(process.env.DEPLOY_PRIME_URL) + '/.netlify/functions/graphql' :
-  JSON.stringify(process.env.API_URL)
-
 const makeConfig = (mode) => {
-  console.log('SECRET', process.env)
   const { NODE_ENV } = process.env;
   const isProduction = NODE_ENV === 'production';
-
+  const apiUrl = process.env.DEPLOY_PRIME_URL ?
+    process.env.DEPLOY_PRIME_URL + '/.netlify/functions/graphql' :
+    process.env.API_URL
   // Build plugins
   const plugins = [
     new HtmlWebpackPlugin({ inject: true, template: './index.html' }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.API_URL': apiUrl,
+      'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+      'process.env.API_URL': JSON.stringify(apiUrl),
     }),
   ];
 
