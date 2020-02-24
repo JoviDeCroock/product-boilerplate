@@ -8,8 +8,7 @@
     "dev": "concurrently \"yarn dev:client\" \"yarn dev:server\"",
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server",
     "dev:server": "netlify dev -o --port=3001 -f ./server/src",
-    "postinstall": "cd server && yarn && cd ../",
-    "localdev": "netlify-lambda serve ."
+    "postinstall": "cd server && yarn && cd ../"
   },
   "repository": {
     "type": "git",
