@@ -6,6 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackEsmodulesPlugin = require('webpack-module-nomodule-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const babelConfig = require('./.babelrc');
+const loader = require('./scripts/loader');
+
+console.log(loader);
 
 const env = babelConfig.env;
 const modernTerser = new TerserPlugin({
@@ -34,6 +37,7 @@ const makeConfig = (mode) => {
   const apiUrl = process.env.DEPLOY_PRIME_URL ?
     process.env.DEPLOY_PRIME_URL + '/.netlify/functions/graphql' :
     process.env.API_URL
+
   // Build plugins
   const plugins = [
     new HtmlWebpackPlugin({ inject: true, template: './index.html' }),
@@ -123,7 +127,7 @@ const makeConfig = (mode) => {
           test: /\.js$/,
           enforce: 'pre',
           exclude: /node_modules/,
-          loader: 'source-map-loader',
+          loaders: ['source-map-loader', loader],
         },
         {
           // Makes our babel-loader the lord and savior over our TypeScript
@@ -131,11 +135,16 @@ const makeConfig = (mode) => {
           include: [
             path.resolve(__dirname, "src"),
           ],
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true,
-            ...env[mode],
-          }
+          use: [
+            {
+              loader: 'babel-loader',
+              options: {
+                cacheDirectory: true,
+                ...env[mode]
+              }
+            },
+            loader,
+          ]
         },
       ],
     },
