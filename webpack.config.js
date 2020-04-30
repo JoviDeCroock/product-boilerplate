@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackEsmodulesPlugin = require('webpack-module-nomodule-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const babelConfig = require('./.babelrc');
+const PreactRefreshPlugin = require('preact-refresh');
 
 const env = babelConfig.env;
 const modernTerser = new TerserPlugin({
@@ -44,11 +45,10 @@ const makeConfig = (mode) => {
   ];
 
   if (!isProduction) {
+    plugins.push(new PreactRefreshPlugin());
     plugins.push(new webpack.HotModuleReplacementPlugin());
     // plugins.push(new BundleAnalyzerPlugin());
-  }
-
-  if (isProduction) {
+  } else if (isProduction) {
     plugins.push(new HtmlWebpackEsmodulesPlugin(mode))
     // plugins.push(new BundleAnalyzerPlugin({ analyzerMode: 'static' }));
   }
@@ -80,7 +80,7 @@ const makeConfig = (mode) => {
     output: {
       chunkFilename: `[name]-[contenthash]${mode === 'modern' ? '.modern.js' : '.js'}`,
       filename: isProduction ? `[name]-[contenthash]${mode === 'modern' ? '.modern.js' : '.js'}` : `[name]${mode === 'modern' ? '.modern.js' : '.js'}`,
-      path: path.resolve(__dirname, './dist'),
+      path: path.resolve(__dirname, 'dist'),
       publicPath: '/',
     },
     optimization: {
@@ -91,6 +91,7 @@ const makeConfig = (mode) => {
       mainFields: ['module', 'main', 'browser'],
       extensions: [".tsx", ".ts", ".mjs", ".js", ".jsx"],
       alias: {
+        preact: path.resolve(__dirname, 'node_modules', 'preact'),
         ...(mode === 'modern' ? { 'url': 'native-url' } : {})
       },
     },
