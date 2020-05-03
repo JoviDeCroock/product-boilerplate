@@ -84,7 +84,8 @@ const makeConfig = (mode) => {
       publicPath: '/',
     },
     optimization: {
-      minimizer: mode === 'legacy' ? undefined : [modernTerser],
+      minimize: false,
+      //minimizer: mode === 'legacy' ? undefined : [modernTerser],
     },
     plugins,
     resolve: {
@@ -118,13 +119,6 @@ const makeConfig = (mode) => {
               options: {},
             },
           ],
-        },
-        {
-          // Allows us to debug our typescript just like js.
-          test: /\.js$/,
-          enforce: 'pre',
-          exclude: /node_modules/,
-          loader: 'source-map-loader',
         },
         {
           // Makes our babel-loader the lord and savior over our TypeScript
