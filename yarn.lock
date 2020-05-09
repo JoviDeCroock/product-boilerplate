@@ -4437,15 +4437,20 @@ preact-async-route@^2.2.1:
   resolved "https://registry.yarnpkg.com/preact-async-route/-/preact-async-route-2.2.1.tgz#729f8f8650281973251fbbf852d5004f32f48594"
   integrity sha512-8bg1007akXs3YDmzYT4McaTe6ji2FIzcc0/NTlu+vjJaKPNQ8lNG/HQ6LP+FoIxQ4m/KH5vvJCHJN5ADp2iNGA==
 
+preact-refresh@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/preact-refresh/-/preact-refresh-0.4.1.tgz#038db9793676abf0f0a4ec9f7b20a508775059d8"
+  integrity sha512-cZcg6dDeGKPkI2s/X8NKq6vlPC2eNUYBuzCa2EWs4obvQdw15XzzWIsWXblzKNtgfMHXu0qvKRRs+iKd0rflOw==
+
 preact-router@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/preact-router/-/preact-router-3.2.1.tgz#c7d12d8fc7a60bfbe5cadf23a234551bec783468"
   integrity sha512-KEN2VN1DxUlTwzW5IFkF13YIA2OdQ2OvgJTkQREF+AA2NrHRLaGbB68EjS4IeZOa1shvQ1FvEm3bSLta4sXBhg==
 
-preact@^10.3.2:
-  version "10.3.2"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.3.2.tgz#1dabd1747b54de4e6820c7d2eadbb8bc4c2e3047"
-  integrity sha512-yIx4i7gp45enhzX4SLkvvR20UZ+YOUbMdj2KEscU/dC70MHv/L6dpTcsP+4sXrU9SRbA3GjJQQCPfFa5sE17dQ==
+preact@^10.4.1:
+  version "10.4.1"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.4.1.tgz#9b3ba020547673a231c6cf16f0fbaef0e8863431"
+  integrity sha512-WKrRpCSwL2t3tpOOGhf2WfTpcmbpxaWtDbdJdKdjd0aEiTkvOmS4NBkG6kzlaAHI9AkQ3iVqbFWM3Ei7mZ4o1Q==
 
 pretty-error@^2.0.2:
   version "2.1.1"

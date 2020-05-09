@@ -1,10 +1,9 @@
 const plugins = [
+  // "react-refresh/babel",
   "@babel/plugin-syntax-dynamic-import"
 ];
 
-const presets = [
-  
-];
+const presets = [];
 
 module.exports = {
   env: {
