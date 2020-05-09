@@ -1,5 +1,5 @@
 const plugins = [
-  // "preact-refresh/babel",
+  // "react-refresh/babel",
   "@babel/plugin-syntax-dynamic-import"
 ];
 

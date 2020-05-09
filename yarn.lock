@@ -4437,10 +4437,10 @@ preact-async-route@^2.2.1:
   resolved "https://registry.yarnpkg.com/preact-async-route/-/preact-async-route-2.2.1.tgz#729f8f8650281973251fbbf852d5004f32f48594"
   integrity sha512-8bg1007akXs3YDmzYT4McaTe6ji2FIzcc0/NTlu+vjJaKPNQ8lNG/HQ6LP+FoIxQ4m/KH5vvJCHJN5ADp2iNGA==
 
-preact-refresh@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/preact-refresh/-/preact-refresh-0.3.0.tgz#e3c7e38b162bd5952138434caca88e5bf7ea158d"
-  integrity sha512-vf1f139g3Zw4jFMtTu+jATQnZW8kC5OdLhMkPyB98oG7M4iw7UPEqjWCn/0FXZ0S2ia8qpy8WFRck4OM6xX36Q==
+preact-refresh@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/preact-refresh/-/preact-refresh-0.4.1.tgz#038db9793676abf0f0a4ec9f7b20a508775059d8"
+  integrity sha512-cZcg6dDeGKPkI2s/X8NKq6vlPC2eNUYBuzCa2EWs4obvQdw15XzzWIsWXblzKNtgfMHXu0qvKRRs+iKd0rflOw==
 
 preact-router@^3.2.1:
   version "3.2.1"

@@ -24,11 +24,12 @@ import { useState } from 'preact/hooks';
 
 const Landing = () => {
   const [state, setState] = useState(2);
+  const [s] = useState(2);
 
   return (
     <div>
       <p>Count: {state}</p>
-      <button onClick={() => setState(state + 4)}>Increment</button>
+      <button onClick={() => setState(state + 2)}>Increment</button>
     </div>
   )
 }
