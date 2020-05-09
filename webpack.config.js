@@ -48,7 +48,7 @@ const makeConfig = (mode) => {
     plugins.push(new PreactRefreshPlugin());
     plugins.push(new webpack.HotModuleReplacementPlugin());
     // plugins.push(new BundleAnalyzerPlugin());
-  } else if (isProduction) {
+  } else {
     plugins.push(new HtmlWebpackEsmodulesPlugin(mode))
     // plugins.push(new BundleAnalyzerPlugin({ analyzerMode: 'static' }));
   }
@@ -84,8 +84,7 @@ const makeConfig = (mode) => {
       publicPath: '/',
     },
     optimization: {
-      minimize: false,
-      //minimizer: mode === 'legacy' ? undefined : [modernTerser],
+      minimizer: mode === 'legacy' ? undefined : [modernTerser],
     },
     plugins,
     resolve: {
@@ -119,6 +118,13 @@ const makeConfig = (mode) => {
               options: {},
             },
           ],
+        },
+        {
+          // Allows us to debug our typescript just like js.
+          test: /\.js$/,
+          enforce: 'pre',
+          exclude: /node_modules/,
+          loader: 'source-map-loader',
         },
         {
           // Makes our babel-loader the lord and savior over our TypeScript
