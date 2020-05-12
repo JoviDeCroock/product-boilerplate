@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
-import { useState } from 'preact/hooks';
 import { useLanding } from './useLanding';
+import { Hello } from './Hello';
 
 // class Landing extends Component {
 //   constructor(props) {
@@ -10,7 +10,7 @@ import { useLanding } from './useLanding';
 //   }
 
 //   increment() {
-//     this.setState({ i: this.state.i + 3 });
+//     this.setState({ i: this.state.i + 2 });
 //   }
   
 //   render() {
@@ -25,11 +25,13 @@ import { useLanding } from './useLanding';
 
 const Landing = () => {
   const [state, increment] = useLanding();
+  console.log(increment.toString());
 
   return (
     <div>
       <p>Count: {state}</p>
       <button onClick={increment}>Increment</button>
+      <Hello />
     </div>
   )
 }
