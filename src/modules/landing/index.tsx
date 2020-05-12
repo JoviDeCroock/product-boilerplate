@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import { useState } from 'preact/hooks';
+import { useLanding } from './useLanding';
 
 // class Landing extends Component {
 //   constructor(props) {
@@ -23,12 +24,12 @@ import { useState } from 'preact/hooks';
 // }
 
 const Landing = () => {
-  const [state, setState] = useState(2);
+  const [state, increment] = useLanding();
 
   return (
     <div>
       <p>Count: {state}</p>
-      <button onClick={() => setState(state + 4)}>Increment</button>
+      <button onClick={increment}>Increment</button>
     </div>
   )
 }
