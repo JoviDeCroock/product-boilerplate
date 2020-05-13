@@ -4,6 +4,6 @@ export const useLanding = () => {
   const [state, setState] = useState(2);
 
   return [state, () => {
-    setState(() => state + 2)
+    setState(() => state + 44)
   }]
 }
