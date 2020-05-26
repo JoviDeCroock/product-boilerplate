@@ -12,7 +12,7 @@ import { Hello } from './Hello';
 //   increment() {
 //     this.setState({ i: this.state.i + 2 });
 //   }
-  
+
 //   render() {
 //     return (
 //       <div>
@@ -25,7 +25,6 @@ import { Hello } from './Hello';
 
 const Landing = () => {
   const [state, increment] = useLanding();
-  console.log(increment.toString());
 
   return (
     <div>
