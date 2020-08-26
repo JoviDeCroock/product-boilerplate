@@ -1,25 +1,27 @@
 const plugins = [
   // "react-refresh/babel",
-  "@babel/plugin-syntax-dynamic-import"
+  '@babel/plugin-syntax-dynamic-import'
 ];
 
-const presets = [];
+const presets = [
+
+];
 
 module.exports = {
   env: {
     legacy: {
       presets: [
-        ["@babel/preset-typescript", {
+        ['@babel/preset-typescript', {
           jsxPragma: 'h',
         }],
         [
-          "@babel/preset-env", {
-            exclude: ["@babel/plugin-transform-typeof-symbol"],
+          '@babel/preset-env', {
+            exclude: ['@babel/plugin-transform-typeof-symbol'],
             modules: false,
             loose: true,
             corejs: 3,
             targets: {
-              browsers: ["last 2 versions", "ie >= 11"]
+              browsers: ['last 2 versions', 'ie >= 11']
             },
             useBuiltIns: 'entry',
           }
@@ -27,24 +29,32 @@ module.exports = {
       ],
       plugins: [
         ...plugins,
-        ["@babel/plugin-transform-runtime", { corejs: 3 }],
-        ["@babel/plugin-transform-react-jsx", {
-          "pragma": "h",
-          "pragmaFrag": "Fragment",
-        }]
+        ['@babel/plugin-transform-runtime', { corejs: 3 }],
+
+        ['@babel/plugin-transform-react-jsx', {
+          'pragma': 'h',
+          'pragmaFrag': 'Fragment',
+        }],
+        [
+          'auto-import', {
+            'declarations': [
+              { 'members': ['h', 'Fragment'], 'path': 'preact' }
+            ]
+          }
+        ],
       ],
     },
     modern: {
       presets: [
-        "@babel/preset-typescript",
+        '@babel/preset-typescript',
         ['@babel/preset-modules', { loose: true }]
       ],
       plugins: [
         ...plugins,
-        ["babel-plugin-transform-jsx-to-htm", {
-          "import": {
-            "module": "htm/preact",
-            "export": "html"
+        ['babel-plugin-transform-jsx-to-htm', {
+          'import': {
+            'module': 'htm/preact',
+            'export': 'html'
           }
         }]
       ],
