@@ -1,5 +1,5 @@
 const plugins = [
-  process.env.NODE_env !== 'production' && "react-refresh/babel",
+  process.env.NODE_ENV !== 'production' && "react-refresh/babel",
   '@babel/plugin-syntax-dynamic-import'
 ].filter(Boolean);
 
