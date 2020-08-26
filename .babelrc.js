@@ -1,7 +1,7 @@
 const plugins = [
-  // "react-refresh/babel",
+  process.env.NODE_ENV !== 'production' && "react-refresh/babel",
   '@babel/plugin-syntax-dynamic-import'
-];
+].filter(Boolean);
 
 const presets = [
 
