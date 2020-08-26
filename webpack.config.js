@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackEsmodulesPlugin = require('webpack-module-nomodule-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const babelConfig = require('./.babelrc');
-const PreactRefreshPlugin = require('preact-refresh');
+const PreactRefreshPlugin = require('@prefresh/webpack');
 
 const env = babelConfig.env;
 const modernTerser = new TerserPlugin({
