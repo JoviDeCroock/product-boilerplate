@@ -1,7 +1,7 @@
-import { h } from 'preact';
 import { Provider } from '@urql/preact';
 import { Router } from 'preact-router';
 import AsyncRoute from 'preact-async-route';
+
 import gqlClient from './global/graphql';
 import Loading from './common/Loading';
 import ErrorBoundary from './global/ErrorBoundary';

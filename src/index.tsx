@@ -1,9 +1,9 @@
 import { h, render } from 'preact';
-import { setPragma } from 'goober';
+import { setup } from 'goober';
 import normalize from './global/normalizeStyles';
 import { App } from './App';
 
-setPragma(h);
+setup(h);
 normalize();
 
 const root = document.getElementById('root');
